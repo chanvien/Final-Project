@@ -1,30 +1,45 @@
-<!--- Header include----->
 
- <header id="header" class="header d-flex align-items-center bg-light d-block" style="position:sticky;top: 0; z-index: 1000;height: 80px;">
-    <div class="d-flex align-items-center justify-content-between" style="margin-right: 20px;margin-left: 20px;">
-      <a href="home.php">
-        <label class="" style="color: red;">Logo</label>
-      </a>
-    </div>
+<script type="text/javascript">
+  function help(){
+    alert('Cant help lol');
+  }
+</script>
 
-    <!-- End Logo -->
+<header>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Product List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Custom Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
 
-    <nav class="header-nav ms-auto">
+      </div>
+      <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li>
 
         <li class="nav-item dropdown pe-3 d-block">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/pfp.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">teste</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2"></span>
           </a>
-
-          <!-- End Profile Iamge Icon -->
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow  profile">
             <li class="dropdown-header">
               <h6>User</h6>
@@ -73,12 +88,6 @@
         </li>
       </ul>
     </nav>
-  </header>
-
-<br><br>
-
-<script type="text/javascript">
-  function help(){
-    alert('Cant help lol');
-  }
-</script>
+    </div>
+  </nav>
+</header>
