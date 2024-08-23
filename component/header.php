@@ -28,13 +28,13 @@
             <a class="nav-link active" aria-current="page" href="/Final-Project/index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Final-Project/productlist">Product List</a>
+            <a class="nav-link" href="/Final-Project/src/productlist">Product List</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Custom Product</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Final-Project/contact">Contact Us</a>
+            <a class="nav-link" href="/Final-Project/src/contact">Contact Us</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -45,12 +45,13 @@
       
       <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
+        <a href="/Final-Project/src/login" style="color: black;">Login/Register</a>
+        
         <li class="nav-item dropdown pe-3 d-block">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <!-- <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <label for="">Profile</label>
             <span class="d-none d-md-block dropdown-toggle ps-2"></span>
-          </a>
+          </a> -->
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow  profile" style="margin-top: 25px;">
             <li class="dropdown-header">
               <i class="bi bi-person" style="font-size: 20px;"></i>
@@ -61,7 +62,7 @@
               <hr class="dropdown-divider">
             </li>
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="booked.php">
+              <a class="dropdown-item d-flex align-items-center" href="/Final-Project/src/cart">
                 
                 <i class="ri-shopping-cart-line"></i>
                 <span> My Cart</span>
@@ -104,3 +105,4 @@
     </div>
   </nav>
 </header>
+<br><br><br>
