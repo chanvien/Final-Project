@@ -15,9 +15,7 @@ include 'component/dbfun.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-  <!-- <div style="margin-left: 75%;font-size:20px;">
-			<a href="https://maps.app.goo.gl/NNuatMps4J5WhQn38" style="text-decoration: none;"><i class="fa-solid fa-location-dot"></i> Location</a>
-		</div> -->
+
 </head>
 
 <body>
@@ -70,13 +68,13 @@ include 'component/dbfun.php';
           <button class="btn btn-secondary w-100" style="background-color: #EF9C9C; padding: 20px;">About Us</button>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <button class="btn btn-secondary w-100" style="background-color: #88B9E6; padding: 20px;" onclick="window.location.href='category/index.php'">Category</button>
+          <button class="btn btn-secondary w-100" style="background-color: #88B9E6; padding: 20px;" onclick="window.location.href='src/category/index.php'">Category</button>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <button class="btn btn-secondary w-100" style="background-color: #8DDF8C; padding: 20px;">Contact Us</button>
+          <button class="btn btn-secondary w-100" style="background-color: #8DDF8C; padding: 20px;"  onclick="window.location.href='src/contact/index.php'">Contact Us</button>
         </div>
         <div class="col-12 col-md-6 col-lg-3">
-          <button class="btn btn-secondary w-100" style="background-color: #E6DA70; padding: 20px;">Product List</button>
+          <button class="btn btn-secondary w-100" style="background-color: #E6DA70; padding: 20px;" onclick="window.location.href='src/productlist/'">Product List</button>
         </div>
       </div>
     </div>
