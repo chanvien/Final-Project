@@ -14,10 +14,10 @@ class Database {
 	}
 
 	function dbconnect(){
-		$this->DBserver = "sql110.infinityfree.com";
-		$this->DBuser   = "if0_37109502";
-		$this->DBpass   = "aC8yaUvZ0L";
-		$this->Database = "if0_37109502_final";
+		$this->DBserver = "localhost";
+		$this->DBuser   = "root";
+		$this->DBpass   = "";
+		$this->Database = "final";
 
 		$this->Conn = new mysqli($this->DBserver, $this->DBuser, $this->DBpass, $this->Database);
 		return $this->Conn;

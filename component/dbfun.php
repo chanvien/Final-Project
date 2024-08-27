@@ -15,7 +15,7 @@ class event extends Database {
 	}
 
 	public function login($name,$pass){
-		$qry = $this->Conn->query("SELECT * FROM user WHERE u_name = '$name' AND u_pass = '$pass'");
+		$qry = $this->Conn->query("SELECT * FROM user WHERE email = '$name' AND password = '$pass'");
 		$row = mysqli_num_rows($qry);
 		if ($row == 1) {
 			return TRUE;
@@ -28,7 +28,7 @@ class event extends Database {
 		return $qry;
 	}
 	public function check($name){
-		$qry = $this->Conn->query("SELECT * FROM user WHERE u_name = '$name'");
+		$qry = $this->Conn->query("SELECT * FROM user WHERE name = '$name'");
 		$no_row = mysqli_num_rows($qry);
 		if ($no_row > 0) {
 			return TRUE;
@@ -37,7 +37,7 @@ class event extends Database {
 		}
 	}
 	public function checkema($name){
-		$qry = $this->Conn->query("SELECT * FROM user WHERE u_email = '$name'");
+		$qry = $this->Conn->query("SELECT * FROM user WHERE email = '$name'");
 		$no_row = mysqli_num_rows($qry);
 		if ($no_row > 0) {
 			return TRUE;
@@ -45,8 +45,9 @@ class event extends Database {
 			return FALSE;
 		}
 	}
-		public function reg($name,$pass,$em,$date){
-		$qry = $this->Conn->query("INSERT INTO user (u_name,u_pwd,u_email,u_date) VALUES ('$name','$pass','$em','$date')");
+		public function reg($name,$pass,$em){
+		$date =' '.date('Y/m/d H:i:sa');
+		$qry = $this->Conn->query("INSERT INTO user (name,password,email,u_date) VALUES ('$name','$pass','$em','$date')");
 		return $qry;
 	}
 	public function poster($table){

@@ -1,5 +1,25 @@
 <?php
 include '../../component/dbfun.php';
+
+$class = new event;
+// login function
+if (isset($_POST['sub'])) {
+	$class= new event();
+	$user = $_POST['email'];
+	$pass = $_POST['pwd'];
+	$qry  = $class->login($user,$pass);
+	$row = mysqli_num_rows($qry);
+	$data = mysqli_fetch_array($qry);
+	$id = $data[0];
+		if ($qry == 1) {
+			$_SESSION["user"]="$user";
+			$_SESSION["id"]="$id";
+			echo "<script>window.location.href='../../index.php'</script>";
+		}else{
+			echo "<script>alert('Wrong password or Username');window.location.href='index.php'</script>";
+		}
+	}
+
 ?>
 <!DOCTYPE html> 
 <html lang="en">
