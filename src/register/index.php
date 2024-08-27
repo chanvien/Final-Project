@@ -1,5 +1,31 @@
 <?php
 include '../../component/dbfun.php';
+
+$class = new event;
+// register funtion
+if (isset($_POST['sub'])) {
+	$user = $_POST['user'];
+	$pass = $_POST['pwd'];
+	$cpwd = $_POST['cpwd'];
+	$ema = $_POST['email'];
+	$qry0 = $class->check($user);
+	$qry2 = $class->checkema($ema);
+	if ($qry2 == 1) {
+		echo "<script>alert('this email has been used');window.location.href='index.php'</script>";
+	}elseif ($cpwd != $pass) {
+		echo "<script>alert('Comfirm password not match')</script>";
+	}elseif ($qry0 == 1) {
+		echo "<script>alert('This Username has been used by other')</script>";
+	}elseif ($qry0 == 0) {
+		$qry  = $class->reg($user,$pass,$ema);
+		if ($qry == 1) {
+			echo "<script>alert('Successfully Register');window.location.href='../login/index.php'</script>";
+		}else{
+			echo "<script>alert('Register Error')</script>";
+		}
+	}		
+}
+
 ?>
 <!DOCTYPE html> 
 <html lang="en">
