@@ -5,14 +5,13 @@ $class = new event;
 // login function
 if (isset($_POST['sub'])) {
 	$class= new event();
-	$user = $_POST['email'];
+	$email = $_POST['email'];
 	$pass = $_POST['pwd'];
-	$qry  = $class->login($user,$pass);
-	$row = mysqli_num_rows($qry);
+	$qry  = $class->db_qry("SELECT * FROM user WHERE email = '$email'");
 	$data = mysqli_fetch_array($qry);
 	$id = $data[0];
-		if ($qry == 1) {
-			$_SESSION["user"]="$user";
+		if (password_verify($pass,$data["password"])) {
+			$_SESSION["user"]="$email";
 			$_SESSION["id"]="$id";
 			echo "<script>window.location.href='../../index.php'</script>";
 		}else{
@@ -40,32 +39,30 @@ if (isset($_POST['sub'])) {
 <div class="content">
 
 <main>
-<div class="container text-center">
-		<br><br>
-		<div class="card p-5" style="margin:auto;width: 30%;border: none;">
-		  <form action="index.php" method="post">
-		    
-		    <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-4 border-0 shadow-sm mt-5">
+                <form action="index.php" method="post">
+                    <h1 class="h3 mb-3 fw-normal text-center">Please Login</h1>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="pwd" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" name="sub">Login</button>
+                    <div class="text-center mt-3">
+                        <p>Don't have an account? Click <a href="/Final-Project/src/register" style="color:blue;text-decoration: underline;">Here</a> to create an account.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <div class="form-floating">
-		      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" require>
-		      <label for="floatingInput">Email</label>
-		    </div>
-		    <div class="form-floating">
-		      <input type="password" name="pwd" class="form-control" id="floatingPassword" placeholder="Password" require>
-		      <label for="floatingPassword">Password</label>
-		    </div>
-
-		    <div class="checkbox mb-3">
-<!-- 		      <label>
-		        <input type="checkbox" value="remember-me"> Remember me
-		      </label> -->
-		    </div>
-		    <button class="w-100 btn btn-lg btn-primary" type="submit" name="sub">Login</button><br><br>
-		    <p>Dont have an account ? Click <a href="/Final-Project/src/register" style="color:blue;text-decoration: underline;">Here</a> to create an account</p>
-		  </form>			
-		</div>
-	</div>
 
 </main>
 

@@ -24,11 +24,9 @@ include '../../component/dbfun.php';
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Category</h1>
-        <p class="lead text-muted">In this page is to our customer to easily checkout our product</p>
+        <h1 class="fw-light">Cart</h1>    
         <p>
           <a href="#" class="btn btn-primary my-2" onclick="window.location.href='/Final-Project/index.php'">Back</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
         </p>
       </div>
     </div>
