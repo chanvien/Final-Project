@@ -1,4 +1,7 @@
+<?php
+$class = new event();
 
+?>
 <script type="text/javascript">
   function help(){
     alert('Cant help lol');
@@ -47,20 +50,26 @@
         
       <ul class="d-flex align-items-center">
         <?php
-         if (!isset($_SESSION["user"]) || strlen($_SESSION["user"]) == 0) {
+         if (!isset($_SESSION["id"]) || strlen($_SESSION["id"]) == 0) {
+          
         ?>
         <a href="/Final-Project/src/login" style="color: black;">Login/Register</a>
-        <?php }else{ ?>
-        <li class="nav-item dropdown pe-3 d-block">
+        <?php }else{ 
+          $qry = $class->db_qry("SELECT * FROM user WHERE id = ".$_SESSION["id"]."");
+          while ($row = mysqli_fetch_array($qry)) {          
+        ?>
+        <li class="nav-item dropdown pe-3 d-block">         
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <label for="">Profile</label>
+            <!-- <img src="/Final-Project/assets/img/pfp.png" class="rounded-circle m-2"> -->
+            <!-- <?=$row['name']?> -->
+             My Profile
             <span class="d-none d-md-block dropdown-toggle ps-2"></span>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow  profile" style="margin-top: 25px;">
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow  profile" style="margin-top: 40px;">
             <li class="dropdown-header">
               <i class="bi bi-person" style="font-size: 20px;"></i>
-              <h6>User</h6>
-              <span>Wellcome</span>
+              <h6><?=$row['name']?></h6>
+              <span><?=$row['email']?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -104,7 +113,7 @@
             </li>          
           </ul>
         </li>
-        <?php }?>
+        <?php }}?>
       </ul>
     </nav>
     </div>

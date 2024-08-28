@@ -17,7 +17,8 @@ if (isset($_POST['sub'])) {
 	}elseif ($qry0 == 1) {
 		echo "<script>alert('This Username has been used by other')</script>";
 	}elseif ($qry0 == 0) {
-		$qry  = $class->reg($user,$pass,$ema);
+		$pwd = password_hash($pass, PASSWORD_DEFAULT);
+		$qry  = $class->reg($user,$pwd,$ema);
 		if ($qry == 1) {
 			echo "<script>alert('Successfully Register');window.location.href='../login/index.php'</script>";
 		}else{
@@ -46,41 +47,37 @@ if (isset($_POST['sub'])) {
 <div class="content">
 
 <main>
-
-<div class="container text-center">
-		<br><br>
-		<div class="card p-5" style="margin:auto;width: 30%;border: none;">
-		  <form action="index.php" method="post">
-		    
-		    <h1 class="h3 mb-3 fw-normal">Register</h1>
-
-		    <div class="form-floating">
-		      <input type="input" name="user" class="form-control" id="floatingInput" placeholder="name@example.com" require>
-		      <label for="floatingInput">Username</label>
-		    </div>
-        <div class="form-floating">
-		      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" require>
-		      <label for="floatingInput">Email</label>
-		    </div>
-		    <div class="form-floating">
-		      <input type="password" name="pwd" class="form-control" id="floatingPassword" placeholder="Password" require>
-		      <label for="floatingPassword">Password</label>
-		    </div>
-        <div class="form-floating">
-		      <input type="password" name="cpwd" class="form-control" id="floatingPassword" placeholder="Password" require>
-		      <label for="floatingPassword">Confirm Password</label>
-		    </div>
-
-		    <div class="checkbox mb-3">
-<!-- 		      <label>
-		        <input type="checkbox" value="remember-me"> Remember me
-		      </label> -->
-		    </div>
-		    <button class="w-100 btn btn-lg btn-primary" type="submit" name="sub">Register</button><br><br>
-		    <p>Already have an account ? Click <a href="/Final-Project/src/login" style="color:blue;text-decoration: underline;">Here</a> to Login</p>
-		  </form>			
-		</div>
-	</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-4 border-0 shadow-sm mt-5">
+                <form action="index.php" method="post">
+                    <h1 class="h3 mb-3 fw-normal text-center">Register</h1>
+					<div class="form-floating mb-3">
+                        <input type="name" name="user" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="pwd" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+					<div class="form-floating mb-3">
+                        <input type="password" name="cpwd" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword">Confirm Password</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" name="sub">Register</button>
+                    <div class="text-center mt-3">
+						<p>Already have an account ? Click <a href="/Final-Project/src/login" style="color:blue;text-decoration: underline;">Here</a> to Login</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </main>
 
 </div>
