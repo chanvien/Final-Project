@@ -87,6 +87,58 @@ include '../../component/dbfun.php';
                 </div>
             </div>
         </div>
+
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="../../fp/大士爷/240655314_10216699739000771_5580025763558588481_n.jpg" class="img-fluid" alt="">
+
+                <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                        </div>
+                            <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="../../fp/龙袍/384463582_10220177144533736_4796452674230490514_n.jpg" class="img-fluid" alt="">
+
+                <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                        </div>
+                            <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="../../fp/神主牌/WhatsApp Image 2024-08-08 at 4.42.28 PM.jpeg" class="img-fluid" alt="">
+
+                <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                        </div>
+                            <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     
