@@ -1,5 +1,19 @@
 <?php
 include '../../component/dbfun.php';
+$class = new event();
+
+if (isset($_GET['id']) && isset($_GET['action']) && $_GET['action'] == "cart") {
+    $id = $_GET['id'];
+    $name = $_SESSION["id"];
+    $check = $class->checkcart($name, $id); // Pass the correct order: user ID first, then product ID
+    
+    if ($check === 0) { // If the item is not in the cart, add it
+        $qry = $class->cart($name, $id);
+        echo "<script>window.location.href='/Final-Project/src/cart/index.php'</script>";
+    } else { // If the item is already in the cart, alert and redirect
+        echo "<script>alert('Already in cart');window.location.href='/Final-Project/src/cart/index.php'</script>";
+    }
+}
 ?>
 <!DOCTYPE html> 
 <html lang="en">
@@ -36,58 +50,61 @@ include '../../component/dbfun.php';
 <div class="album py-5 bg-light">
     <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <?php
+    
+    if (isset($_GET["id"]) && $_GET["id"] !== "") {
+        $qry = $class->db_qry("SELECT * FROM product WHERE p_category = ".$_GET["id"]."");
+        while($row = mysqli_fetch_array($qry)){ ?>
         <div class="col">
             <div class="card shadow-sm">
-            <img src="../../fp/product/flag.jpg" class="img-fluid" alt="">
+            <img src="<?=$row["p_image"]?>" class="img-fluid" alt="">
                 
                 <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <br>
+                    <h2><?=$row["p_name"]?></h2>
+                    <p class="card-text"><?=$row["p_description"]?></p>
+                    <h3 style="color: red;">RM <?=$row["p_price"]?></h3>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='/Final-Project/src/productlist/index.php?id=<?=$row['p_id']?>&action=cart'">Cart</button>
                             <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                         </div>
-                            <small class="text-muted">9 mins</small>
+                            <!-- <small class="text-muted">9 mins</small> -->
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php
+        }
+    }else{
+        $qry = $class->table("product");
+        while($row = mysqli_fetch_array($qry)){
+    ?>   
         <div class="col">
             <div class="card shadow-sm">
-                <img src="../../fp/product/chop.jpg" class="img-fluid" alt="">
-                <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
-
+            <img src="<?=$row["p_image"]?>" class="img-fluid" alt="">
+                
                 <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <br>
+                    <h2><?=$row["p_name"]?></h2>
+                    <p class="card-text"><?=$row["p_description"]?></p>
+                    <h3 style="color: red;">RM <?=$row["p_price"]?></h3>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='/Final-Project/src/productlist/index.php?id=<?=$row['p_id']?>&action=cart'">Cart</button>
+                            <!-- onclick="window.location.href='/Final-Project/src/cart/index.php?id=<?=$row['p_id']?>'" -->
                             <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                         </div>
-                            <small class="text-muted">9 mins</small>
+                            <!-- <small class="text-muted">9 mins</small> -->
                     </div>
                 </div>
             </div>
         </div>
+        <?php }}?>     
 
-        <div class="col">
-            <div class="card shadow-sm">
-            <img src="../../fp/product/bigflag.jpg" class="img-fluid" alt="">
-
-                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
-                        </div>
-                            <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      
 
     
     </div>
