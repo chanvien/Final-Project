@@ -102,7 +102,10 @@ if (isset($_GET['id']) && isset($_GET['action']) && $_GET['action'] == "cart") {
                 </div>
             </div>
         </div>
-        <?php }}?>
+    <?php }}?>
+        
+    </div>
+
     
     </div>
 </div>
