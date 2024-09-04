@@ -37,7 +37,7 @@ $class = new event();
             <a class="nav-link" href="#">Custom Product</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/Final-Project/src/contact">Contact Us</a>
+            <a class="nav-link" href="/Final-Project/src/contact">Contact Us </a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
