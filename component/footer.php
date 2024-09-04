@@ -16,8 +16,8 @@
         </div>
           <div class="col-md-4  col-sm-7">
             <p>Connect with Us:</p>
-              <a href="#"><i class="bi bi-facebook" style="font-size: 1.5rem;">  </i></a>
-              <a href="#"><i class="bi bi-twitter" style="font-size: 1.5rem;" aria-hidden="true">  </i></a>
+              <a href="https://www.facebook.com/sengcharng.lee?mibextid=LQQJ4d"><i class="bi bi-facebook" style="font-size: 1.5rem;">  </i></a>
+              <a href="#"><i class="bi bi-whatsapp" style="font-size: 1.5rem;" aria-hidden="true">  </i></a>
               <a href="#" ><i class="bi bi-discord" style="font-size: 1.5rem;" aria-hidden="true">  </i></a>
               <a href="#"><i class="bi bi-instagram" style="font-size: 1.5rem;" aria-hidden="true" >  </i></a>
           </div>
